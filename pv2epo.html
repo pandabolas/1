@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Inmobiliario - Ejemplo 2</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Verdana', sans-serif;
+        }
+
+        .banner {
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://i.postimg.cc/sM7xpVtr/5077886757311196782.jpg'); /* Imagen de fondo de Postimages */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .title, .description, .info, .contact-buttons {
+            opacity: 0;
+            animation: dropIn 1s ease forwards;
+        }
+
+        .title {
+            font-size: 60px;
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+            color: #FFD700;
+            animation-delay: 0.5s;
+        }
+
+        .description {
+            font-size: 20px;
+            margin: 20px 0;
+            line-height: 1.6;
+            color: #fff;
+            max-width: 600px;
+            animation-delay: 1s;
+        }
+
+        .info {
+            font-size: 28px;
+            margin: 15px 0;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation-delay: 1.5s;
+        }
+
+        /* Botones de contacto justo debajo del título */
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            animation-delay: 1s;
+        }
+
+        .contact-buttons a {
+            display: inline-block;
+            padding: 15px 20px;
+            background-color: #fff;
+            color: #333;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            font-size: 20px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .contact-buttons a:hover {
+            transform: scale(1.1);
+            background-color: #FFD700;
+        }
+
+        .contact-buttons a i {
+            color: #333;
+        }
+
+        /* Animación para que los elementos caigan desde arriba */
+        @keyframes dropIn {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Media queries para dispositivos móviles */
+        @media only screen and (max-width: 768px) {
+            .title {
+                font-size: 40px;
+            }
+
+            .info {
+                font-size: 20px;
+                max-width: 90%;
+            }
+
+            .description {
+                font-size: 18px;
+                max-width: 90%;
+            }
+
+            .contact-buttons {
+                margin-bottom: 10px; /* Reducido el espacio en móvil */
+            }
+
+            .contact-buttons a {
+                padding: 10px 15px;
+                font-size: 16px;
+            }
+
+            .description, .info {
+                margin-top: 10px; /* Más cerca del contenido */
+            }
+        }
+    </style>
+    <!-- Enlaces a las librerías de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="banner">
+        <div class="title">Barrio El Overo</div>
+        
+        <!-- Botones de contacto debajo del título -->
+        <div class="contact-buttons">
+            <a href="https://wa.me/1234567890" target="_blank" title="Contactar por WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="mailto:info@example.com" target="_blank" title="Enviar email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://instagram.com/example" target="_blank" title="Visitar Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="tel:+1234567890" title="Llamar por teléfono">
+                <i class="fas fa-phone"></i>
+            </a>
+        </div>
+
+        <div class="description">Vive en la calma y belleza de una zona rural ideal para tu casa de fin de semana. Escapa del bullicio de la ciudad y disfruta de un entorno natural.</div>
+        <div class="info">Anticipo USD 5,000 + escribanía + comisión inmobiliaria</div>
+        <div class="info">48 cuotas fijas de USD 300</div>
+        <div class="info">Costo total del lote: USD 15,000. Comisión inmobiliaria: 4% del valor total.</div>
+    </div>
+
+</body>
+</html>
